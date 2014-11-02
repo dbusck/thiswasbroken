@@ -1,6 +1,9 @@
 /* 
 
-Color: #HEX/rgb();
+Color: 		#HEX/rgb();
+------------------------
+Brand: 		#e9494a;
+Off-white: 	#f0edeb;
 
 */
 
@@ -19,7 +22,13 @@ html {
 body {
 	background:white;
 	color:#222;
-	font: 1em/1.5 'Montserrat', sans-serif;
+	font: 1em/1.5 'Titillium Web', sans-serif;
+}
+
+h1,h2,h3,h4,h5,h6 {
+	color: #e9494a;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: bold;
 }
 
 h1,.alpha {		font-size: 1.875em; }
@@ -29,15 +38,71 @@ h4,.delta {		font-size: ;	}
 h5,.epsilon {	font-size: ;	}
 h6,.zeta {		font-size: ;	}
 
+img {
+	max-width: 100%;
+	height:auto;
+}
+
 
 
 /**** GENERAL ****/
+
+.brand {	color:#e9494a; }
+.odd { 		background:#f0edeb;}
+
+a { 
+	color:#e9494a;
+}
+	a:hover {}
 
 .page-section {
 	padding:40px;
 }
 
+/* Navigation */
+.nav{
+    list-style:none;
+    margin-left:0;
+}
+	.nav > li,
+	.nav > li > a{
+		display:inline-block;
+		*display:inline;
+		zoom:1;
+	}
+
+.breadcrumb{}
+.breadcrumb li:before{
+    content:"» "
+}
+.breadcrumb li:first-child:before{
+    content:normal;
+}
+
+.main-nav {
+	margin:0;
+	font-size: 1em;
+	font-family: 'Montserrat', sans-serif;
+}
+	.main-nav li {
+		margin-left:20px;
+		line-height: 38px; // Height of logo
+	}
+
+
+.description {}
+
 
 /**** HEADER ****/
+
+header {
+	padding:20px 40px;
+	background:#302f2f;
+	overflow: hidden;
+}
+
+	.logo {
+		width:120px;
+	}
 
 /**** FOOTER ****/
