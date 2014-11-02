@@ -56,8 +56,14 @@ a {
 	a:hover {}
 
 .page-section {
-	padding:40px;
+	padding:40px 20px;
 }
+	
+	@media only screen 	and (min-width : 320px) {
+		.page-section {
+			padding:80px 40px;
+		}
+	}
 
 /* Navigation */
 .nav{
@@ -89,8 +95,52 @@ a {
 		line-height: 38px; // Height of logo
 	}
 
+		.main-nav li a:hover {
+			color:white;
+		}
 
-.description {}
+.cover-image {
+	width:100%;
+}
+
+
+.showcase-link {
+	position:relative;
+	padding:0;
+}
+
+.overlay {
+	position:absolute;
+	text-align:center;
+	background:rgba(0,0,0,0.4);
+	top:0;
+	right:0;
+	bottom:0;
+	left:0;
+	opacity: 0;
+}
+
+.caption-wrapper {
+	display: table;
+	width:100%;
+	height:100%;
+}
+
+	.caption {
+		display: table-cell;
+		vertical-align: middle;
+	}
+
+		.caption .caption-title {
+			color: white;
+		}
+
+.showcase-link:hover .overlay {
+	opacity:1;
+}
+
+
+
 
 
 /**** HEADER ****/
