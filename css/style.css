@@ -2,7 +2,8 @@
 
 Color: 		#HEX/rgb();
 ------------------------
-Brand: 		#e9494a;
+Brand:		rgb(249, 105, 50);
+Dark:		rgb(48, 47, 47);
 Off-white: 	#f0edeb;
 
 */
@@ -26,7 +27,7 @@ body {
 }
 
 h1,h2,h3,h4,h5,h6 {
-	color: #e9494a;
+	color: rgb(249, 105, 50);
 	font-family: 'Montserrat', sans-serif;
 	font-weight: bold;
 }
@@ -47,11 +48,11 @@ img {
 
 /**** GENERAL ****/
 
-.brand {	color:#e9494a; }
+.brand {	color:rgb(249, 105, 50); }
 .odd { 		background:#f0edeb;}
 
 a { 
-	color:#e9494a;
+	color:rgb(249, 105, 50);
 }
 	a:hover {}
 
@@ -106,7 +107,7 @@ a {
 
 .showcase-link {
 	position:relative;
-	padding:0;
+	margin:15px 0;
 }
 
 .overlay {
@@ -114,9 +115,9 @@ a {
 	text-align:center;
 	background:rgba(0,0,0,0.4);
 	top:0;
-	right:0;
+	right:15px;
 	bottom:0;
-	left:0;
+	left:15px;
 	opacity: 0;
 }
 
@@ -142,17 +143,29 @@ a {
 
 
 
-
 /**** HEADER ****/
 
 header {
 	padding:20px 40px;
-	background:#302f2f;
+	background:transparent;
+	position:fixed;
+	width:100%;
 	overflow: hidden;
+	transition: background-color 100ms ease-in;
 }
 
 	.logo {
 		width:120px;
+		opacity:0;
+		transition: opacity 100ms ease-in;
 	}
+	
+	header.fixed {
+		background:rgb(48, 47, 47);
+	}
+
+		header.fixed .logo {
+			opacity: 1;
+		}
 
 /**** FOOTER ****/
