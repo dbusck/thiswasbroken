@@ -18,8 +18,14 @@ $(document).ready(function () {
 
     // Portrait info popup function
     $('.image-holder').on('click',function(){
-        $('.person').removeClass('show');
-        $(this).parent().addClass('show');
+        var classElement = $(this).parent();
+        
+        if ( classElement.hasClass('show') ) {
+            classElement.removeClass('show');
+        } else {
+            $('.person').removeClass('show');
+            classElement.addClass('show');
+        }
         return false;
     });
 

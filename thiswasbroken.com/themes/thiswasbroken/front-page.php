@@ -25,7 +25,6 @@
 							<?php $thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'homepage-thumb' );
 							$url = $thumb['0']; ?>
 							<img src="<? echo $url ?>" alt="Project-image" width="600" height="400">
-							<div class="blur" style="background-image:url(<? echo $url ?>)"></div>
 							<div class="overlay">
 								<div class="caption-wrapper">
 									<hgroup class="caption">
@@ -49,15 +48,15 @@
 					while ( $loop->have_posts() ) : $loop->the_post();
 						?><div class="person column small-6 medium-3 large-2">
 							<a href="#" class="image-holder <?php echo strtolower(str_replace(' ', '', get_the_title())); ?>">
-								<img class="head-image up" src="<?php the_field( "image_up" ); ?>" alt="Portrait"/>
-								<img class="head-image up-left" src="<?php the_field( "image_upleft" ); ?>" alt="Portrait"/>
-								<img class="head-image left" src="<?php the_field( "image_left" ); ?>" alt="Portrait"/>
-								<img class="head-image down-left" src="<?php the_field( "image_downleft" ); ?>" alt="Portrait"/>
-								<img class="head-image down" src="<?php the_field( "image_down" ); ?>" alt="Portrait"/>
-								<img class="head-image down-right" src="<?php the_field( "image_downright" ); ?>" alt="Portrait"/>
-								<img class="head-image right" src="<?php the_field( "image_right" ); ?>" alt="Portrait"/>
-								<img class="head-image up-right" src="<?php the_field( "image_upright" ); ?>" alt="Portrait"/>
-								<img class="head-image front" src="<?php the_field( "image_front" ); ?>" alt="Portrait"/>
+								<img class="head-image up" src="<?php $image = get_field('image_up'); echo $image['sizes'][ 'thumbnail' ]; ?>" alt="Portrait"/>
+								<img class="head-image up-left" src="<?php $image = get_field('image_upleft'); echo $image['sizes'][ 'thumbnail' ]; ?>" alt="Portrait"/>
+								<img class="head-image left" src="<?php $image = get_field('image_left'); echo $image['sizes'][ 'thumbnail' ]; ?>" alt="Portrait"/>
+								<img class="head-image down-left" src="<?php $image = get_field('image_downleft'); echo $image['sizes'][ 'thumbnail' ]; ?>" alt="Portrait"/>
+								<img class="head-image down" src="<?php $image = get_field('image_down'); echo $image['sizes'][ 'thumbnail' ]; ?>" alt="Portrait"/>
+								<img class="head-image down-right" src="<?php $image = get_field('image_downright'); echo $image['sizes'][ 'thumbnail' ]; ?>" alt="Portrait"/>
+								<img class="head-image right" src="<?php $image = get_field('image_right'); echo $image['sizes'][ 'thumbnail' ]; ?>" alt="Portrait"/>
+								<img class="head-image up-right" src="<?php $image = get_field('image_upright'); echo $image['sizes'][ 'thumbnail' ]; ?>" alt="Portrait"/>
+								<img class="head-image front" src="<?php $image = get_field('image_front'); echo $image['sizes'][ 'thumbnail' ]; ?>" alt="Portrait"/>
 								<img class="dummy" src="<?php echo get_stylesheet_directory_uri(); ?>/images/profile-pic/dummy.gif"/>
 							</a>
 							<div class="popup-bubble">
@@ -73,6 +72,9 @@
 								<?php endif;
 								if ( get_field("facebook_link", $p->ID) ) : ?>
 									<a href="<?php the_field("facebook_link"); ?>" title="Facebook">Facebook</a>
+								<?php endif;
+								if ( get_field("email_link") ) : ?>
+									<a href="mailto:<?php the_field("email_link"); ?>" title="Contact">Contact</a>
 								<?php endif; ?>
 							</div>
 						</div><?php
