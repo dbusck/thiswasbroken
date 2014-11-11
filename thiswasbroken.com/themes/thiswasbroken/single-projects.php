@@ -15,11 +15,17 @@
 				<?php the_content(); ?>
 			</div>
 
-			<div class="project-images row">
+			<div class="project-media row">
 				<?php while(the_repeater_field('project_images')) :
 					$image = get_sub_field('project_image'); ?>
-					<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>"
-				<?php endwhile; ?>
+					<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['title']; ?>">
+					<?php if( $image['caption'] ): ?>
+						<p class="wp-caption-text"><?php echo $image['caption']; ?></p>
+					<?php endif; ?>
+				<?php endwhile;
+				if ( the_field("video_embed") ) :
+				 	the_field("video_embed");
+				endif; ?>
 			</div>
 		</section>
 	<?php endwhile; ?>

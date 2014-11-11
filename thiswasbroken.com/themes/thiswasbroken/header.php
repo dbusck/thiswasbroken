@@ -4,7 +4,7 @@
 	<meta charset="<?php bloginfo( 'charset' ); ?>" />
 	<meta name="viewport" content="initial-scale=1.0" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title><?php wp_title(''); ?></title>
+	<title><?php wp_title("/", "RIGHT"); bloginfo( "name" ); ?></title>
 	<link href="<?php echo get_stylesheet_directory_uri(); ?>/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 	<link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Titillium+Web' rel='stylesheet' type='text/css'>

@@ -1,9 +1,7 @@
 /*
 
 Theme Name: This Was Broken
-Author: Douglas Busck: http://douglasb.se
-
-
+Author: Development + design byDouglas Busck: http://douglasb.se, Art Direction + design by Mathias Ragnarsson: http://mathiasragnarsson.com/
 
 
 
@@ -272,7 +270,7 @@ a {
 	.overlay {
 		position:absolute;
 		text-align:center;
-		background:rgba(0,0,0,0.4);
+		background:rgba(0,0,0,0.7);
 		top:0;
 		right:15px;
 		bottom:0;
@@ -290,6 +288,7 @@ a {
 		.caption {
 			display: table-cell;
 			vertical-align: middle;
+			padding:0 20px;
 		}
 
 			.caption .caption-title {
@@ -348,6 +347,8 @@ a {
 		z-index:0;
 		opacity:0;
 		text-align: center;
+		height:0;
+		overflow: hidden;
 	}
 
 		.popup-bubble:after {
@@ -382,6 +383,8 @@ a {
 				animation-name: bounceIn;
 				opacity:1;
 				z-index:98;
+				height: auto;
+				overflow: auto;
 			}
 
 			.popup-bubble a {
@@ -399,16 +402,28 @@ a {
 	max-width:750px;
 }
 
-.project-images {
+.project-media {
 	margin-top:30px;
+	text-align: center;
 }
 
-	.project-images img {
+	.project-media img {
 		margin-bottom:30px;
 	}
-		.project-images img:last-child {
+		.project-media img:last-child {
 			margin-bottom:0;
 		}
+
+		.wp-caption-text {
+			margin:-1em auto 30px;
+			opacity: 0.7;
+			font-size: 16px !important;
+		}
+
+		.wp-caption-text:last-child {
+			margin-bottom:0;
+		}
+
 
 	.people-involved .column {
 		float:none !important;
@@ -417,7 +432,7 @@ a {
 	}
 
 @media only screen 	and (min-width : 640px) {
-	.project-images {
+	.project-media {
 		margin-top:60px;
 	}
 }
