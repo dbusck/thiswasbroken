@@ -1,6 +1,7 @@
 <!--FOOTER-->
 <footer>
-	This Was Broken, 2014
+	<h3 class="cta alpha">Want to get in touch? <a href="mailto:info@thiswasbroken.com" title="Mail us">Contact us!</a></h3>
+	<span class="watermark">This Was Broken, 2014</span>
 </footer>
 
 <?php wp_footer(); ?>

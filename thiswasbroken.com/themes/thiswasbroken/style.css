@@ -523,6 +523,16 @@ header {
 /**** FOOTER ****/
 footer {
 	color:white;
-	padding:40px;
+	padding:60px 40px;
 	background:rgb(48, 47, 47);
+	text-align: center;
+}
+
+	footer .cta {
+		color:white;
+		margin:0 0 20px;
+	}
+
+.watermark {
+	opacity:0.3;
 }
