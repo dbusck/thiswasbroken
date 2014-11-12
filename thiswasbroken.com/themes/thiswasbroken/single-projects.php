@@ -5,9 +5,19 @@
 			<?php the_post_thumbnail(); ?>
 		</div>
 
-		<style type="text/css" media="screen">
-			<?php the_field("custom_css"); ?>
-		</style>
+		<?php if ( get_field("project_background") || get_field("project_color") ) : ?>
+			<style type="text/css" media="screen">
+				.description {
+					background: <?php the_field("project_background"); ?>;
+					color: <?php the_field("project_textcolor"); ?>;
+				}
+				<?php if ( get_field("project_headercolor") ) : ?>
+					.description h1, .description h2 {
+						color: <?php the_field("project_textcolor"); ?>;
+					}
+				<?php endif; ?>
+			</style>
+		<?php endif; ?>
 
 		<section class="description page-section">
 			<div class="project-text row">
@@ -34,7 +44,7 @@
     $ids = get_field('people_involved', false, false);      
     $loop = new WP_Query(array('post_type' => 'people',	'post__in' => $ids, 'orderby' => 'title', 'order' => 'ASC' )); ?>
     
-		<section class="people-involved page-section text-center <?php if ( !the_field("custom_css") ): ?>odd<?php endif; ?>">
+		<section class="people-involved page-section text-center <?php if ( !get_field("project_background") ): ?>odd<?php endif; ?>">
 			<div class="row">
 				<h2>Who's involved?</h2>
 				<div class="row">
@@ -76,5 +86,30 @@
 			</div>
 		</section>
 	<?php wp_reset_postdata(); ?>
+
+	<section class="more-cases page-section <?php if ( get_field("project_background") ): ?>odd<?php endif; ?>">
+		<div class="row">
+			<h2>See more awesome</h2>
+			<div class="row">			
+				<?php $args = array( 'post_type' => 'projects', 'orderby' => 'title', 'order' => 'ASC' );
+				$loop = new WP_Query( $args ); 
+				while ( $loop->have_posts() ) : $loop->the_post();?>
+					<a href="<?php the_permalink(); ?>" class="showcase-link column medium-3">
+						<?php $thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'homepage-thumb' );
+						$url = $thumb['0']; ?>
+						<img src="<? echo $url ?>" alt="Project-image" width="600" height="400">
+						<div class="overlay">
+							<div class="caption-wrapper">
+								<hgroup class="caption">
+									<h3 class="caption-title"><?php the_title(); ?></h3>
+								</hgroup>
+							</div>
+						</div>
+					</a><?php
+				endwhile;
+				wp_reset_postdata(); ?>
+			</div>
+		</div>
+	</section>
 
 <?php get_footer(); ?>
