@@ -26,6 +26,9 @@
 			</div>
 
 			<div class="project-media row">
+				<?php if ( get_field("video_embed") && get_field("video_ontop") ) :
+				 	the_field("video_embed");
+				endif; ?>
 				<?php while(the_repeater_field('project_images')) :
 					$image = get_sub_field('project_image'); ?>
 					<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['title']; ?>">
@@ -33,8 +36,8 @@
 						<p class="wp-caption-text"><?php echo $image['caption']; ?></p>
 					<?php endif; ?>
 				<?php endwhile;
-				if ( the_field("video_embed") ) :
-				 	the_field("video_embed");
+				if ( get_field("video_embed") && !get_field("video_ontop") ) : 
+					the_field("video_embed"); 
 				endif; ?>
 			</div>
 		</section>

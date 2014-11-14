@@ -119,6 +119,44 @@ img {
 	top: 85%; }
 }
 
+@-webkit-keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -100%, 0);
+            transform: translate3d(0, -100%, 0);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+            transform: none;
+  }
+}
+
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -100%, 0);
+            transform: translate3d(0, -100%, 0);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+            transform: none;
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+
+@keyframes fadeIn {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+
 
 
 /**** GENERAL ****/
@@ -196,6 +234,16 @@ a {
 	width: 100%;
 	text-align: center;
 }
+
+.cover-image {
+	-webkit-animation-duration: 220ms;
+	animation-duration: 220ms;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+	-webkit-animation-name: fadeIn;
+	animation-name: fadeIn;
+}
+	
 	.cover-image img {
 		width:100%;
 	}
@@ -209,7 +257,7 @@ a {
 	
 	.cover-logo img {
 		width:100%;
-		max-width: 600px;
+		max-width: 500px;
 		margin:0 auto;
 	}
 
@@ -237,7 +285,7 @@ a {
 
 	@media only screen 	and (min-width : 640px) {
 		.home .intro-text {
-			padding:5% 0;
+			padding:2% 0;
 		}
 
 			.description p {
@@ -380,16 +428,11 @@ a {
 		}
 
 			.show .popup-bubble {
-				-webkit-animation-fill-mode:both;
-				-moz-animation-fill-mode:both;
-				-ms-animation-fill-mode:both;
-				animation-fill-mode:both;
-				-webkit-animation-duration:220ms;
-				-moz-animation-duration:220ms;
-				-ms-animation-duration:220ms;
-				animation-duration:220ms;
+				-webkit-animation-duration: 220ms;
+				animation-duration: 220ms;
+				-webkit-animation-fill-mode: both;
+				animation-fill-mode: both;
 				-webkit-animation-name: bounceIn;
-				-moz-animation-name: bounceIn;
 				animation-name: bounceIn;
 				opacity:1;
 				z-index:98;
@@ -435,15 +478,15 @@ a {
 		}
 
 
+@media only screen 	and (min-width : 640px) {
+	.project-media {
+		margin-top:60px;
+	}
+
 	.people-involved .column {
 		float:none !important;
 		display: inline-block;
 		float:none;
-	}
-
-@media only screen 	and (min-width : 640px) {
-	.project-media {
-		margin-top:60px;
 	}
 }
 
@@ -457,6 +500,14 @@ header {
 	transition: background-color 100ms ease-in;
 	z-index:99;
 	text-align:center;
+	-webkit-animation-duration: 220ms;
+	animation-duration: 220ms;
+	-webkit-animation-delay: 220ms;
+	animation-delay: 220ms;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+	-webkit-animation-name: fadeInDown;
+	animation-name: fadeInDown;
 }
 	
 	.logo {
